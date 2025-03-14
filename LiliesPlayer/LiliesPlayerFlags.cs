@@ -22,7 +22,6 @@ namespace EnderLiliesMusicPack.LiliesPlayer
 
         public static bool ugDesertOriginalHeight;
         public static bool ZoneSandstorm;
-        public static bool ZoneOverworldHeightExtra;
 
         // mod适配
         public static bool infernumMode;
@@ -75,7 +74,7 @@ namespace EnderLiliesMusicPack.LiliesPlayer
                 else
                 {
                     inTown = player.townNPCs > 2f && ((notRaining && player.ZoneOverworldHeight) || inSpace);
-                    inTownWithRain = player.townNPCs > 2f && isRaining && ZoneOverworldHeightExtra;
+                    inTownWithRain = player.townNPCs > 2f && isRaining;
                     inUgTown = player.townNPCs > 2f && (player.ZoneDirtLayerHeight || player.ZoneRockLayerHeight || player.ZoneUnderworldHeight);
                 }
             }

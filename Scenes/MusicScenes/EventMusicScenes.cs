@@ -66,11 +66,11 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Event/ANocturneforAll");
 
-            public override SceneEffectPriority Priority => SceneEffectPriority.BiomeMedium;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)3;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool condition1 = !Main.remixWorld && LiliesPlayerFlags.isRaining && LiliesPlayerFlags.ZoneOverworldHeightExtra && !(player.ZoneSnow || player.ZoneGraveyard);
+                bool condition1 = !Main.remixWorld && LiliesPlayerFlags.isRaining && !(player.ZoneSnow || player.ZoneGraveyard);
                 bool condition2 = Main.remixWorld && LiliesPlayerFlags.isRaining && (double)(player.position.Y / 16f) > Main.rockLayer && player.position.Y / 16f < (float)(Main.maxTilesY - 350) && !(player.ZoneSnow || player.ZoneGraveyard);
 
                 return (condition1 || condition2 ) && LiliesMusicPackEventConfig.Instance.Rain;
@@ -84,7 +84,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
 
             public override bool IsSceneEffectActive(Player player)
             {
-                return LanternNight.LanternsUp && LiliesPlayerFlags.ZoneOverworldHeightExtra && LiliesPlayerFlags.notRaining && !(player.ZoneGraveyard || player.ZoneMeteor);
+                return LanternNight.LanternsUp && LiliesPlayerFlags.notRaining && !(player.ZoneGraveyard || player.ZoneMeteor);
             }
         }
         #endregion

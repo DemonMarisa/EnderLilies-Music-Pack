@@ -101,3 +101,5 @@ Boss替换
 
 血月：Homunculus
 日蚀：Accolade - Outro
+
+沙尘暴和暴风雪BGM不生效

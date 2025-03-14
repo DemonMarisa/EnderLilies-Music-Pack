@@ -107,7 +107,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Town/Yearning");
 
-            public override SceneEffectPriority Priority => SceneEffectPriority.Environment;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)4;
 
             public override bool IsSceneEffectActive(Player player)
             {
