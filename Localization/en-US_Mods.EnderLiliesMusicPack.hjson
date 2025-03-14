@@ -145,6 +145,86 @@ Configs: {
 			Label: Lunar Towers
 			Tooltip: ""
 		}
+
+		Rain: {
+			Label: Rain
+			Tooltip: ""
+		}
+	}
+
+	LiliesMusicPackBiomeConfig: {
+		DisplayName: Lilies Music Pack Biome Config
+		Headers.Music: Music Header
+
+		Forest: {
+			Label: Forest
+			Tooltip: ""
+		}
+
+		Town: {
+			Label: Town
+			Tooltip: ""
+		}
+
+		UnderGround: {
+			Label: Under Ground
+			Tooltip: ""
+		}
+
+		UnderWorld: {
+			Label: Under World
+			Tooltip: ""
+		}
+
+		Space: {
+			Label: Space
+			Tooltip: ""
+		}
+
+		Snow: {
+			Label: Snow
+			Tooltip: ""
+		}
+
+		Desert: {
+			Label: Desert
+			Tooltip: ""
+		}
+
+		Jungle: {
+			Label: Jungle
+			Tooltip: ""
+		}
+
+		Ocean: {
+			Label: Ocean
+			Tooltip: ""
+		}
+
+		MushroomFields: {
+			Label: Mushroom Fields
+			Tooltip: ""
+		}
+
+		EvilBiome: {
+			Label: Evil Biome
+			Tooltip: ""
+		}
+
+		Hallow: {
+			Label: Hallow
+			Tooltip: ""
+		}
+
+		Dungeon: {
+			Label: Dungeon
+			Tooltip: ""
+		}
+
+		Aether: {
+			Label: Aether
+			Tooltip: ""
+		}
 	}
 }
 

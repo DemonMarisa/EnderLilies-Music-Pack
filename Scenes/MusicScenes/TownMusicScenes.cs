@@ -66,7 +66,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         #region 月后
         public class TownDayPM : ModSceneEffect
         {
-            public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Town/HeartsStayUnchanged");
+            public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Town/HeartsStayUnchangedInst");
 
             public override SceneEffectPriority Priority => SceneEffectPriority.Environment;
 
