@@ -1,0 +1,4 @@
+﻿displayName = Ender Liles Music Pack（终焉系列 音乐包）
+author = DemonMarisa
+sortafter = UnCalamityModMusic
+version = 0.0.0.1

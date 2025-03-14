@@ -1,0 +1,156 @@
+Configs: {
+	LiliesMusicPackConfig: {
+		DisplayName: Lilies Music Pack Config
+
+		Headers: {
+			Music: Music Header
+			MusicConditionChanges: Music Condition Changes Header
+		}
+
+		Prologue: {
+			Label: Prologue
+			Tooltip: ""
+		}
+
+		ENDERLILIES: {
+			Label: E N D E R L I L I E S
+			Tooltip: ""
+		}
+
+		Bulbel: {
+			Label: Bulbel
+			Tooltip: ""
+		}
+
+		HeartsStayUnchanged: {
+			Label: Hearts Stay Unchanged
+			Tooltip: ""
+		}
+
+		CalInterlude2: {
+			Label: Cal Interlude2
+			Tooltip: ""
+		}
+	}
+
+	LiliesMusicPackBossConfig: {
+		DisplayName: Lilies Music Pack Boss Config
+
+		Headers: {
+			Music: Music Header
+			PreHardMode: Pre Hard Mode Header
+		}
+
+		MoonLordMother: {
+			Label: Moon Lord Mother
+			Tooltip: ""
+		}
+
+		LunaticCultist: {
+			Label: Lunatic Cultist
+			Tooltip: ""
+		}
+
+		DukeFish: {
+			Label: Duke Fish
+			Tooltip: ""
+		}
+
+		EOL: {
+			Label: E O L
+			Tooltip: ""
+		}
+
+		Golem: {
+			Label: Golem
+			Tooltip: ""
+		}
+
+		Plantera: {
+			Label: Plantera
+			Tooltip: ""
+		}
+
+		SkeletronPrime: {
+			Label: Skeletron Prime
+			Tooltip: ""
+		}
+
+		Skeletron: {
+			Label: Skeletron
+			Tooltip: ""
+		}
+
+		TheDestroyer: {
+			Label: The Destroyer
+			Tooltip: ""
+		}
+
+		TheTwins: {
+			Label: The Twins
+			Tooltip: ""
+		}
+
+		QueenSlimeBoss: {
+			Label: Queen Slime Boss
+			Tooltip: ""
+		}
+
+		WOF: {
+			Label: W O F
+			Tooltip: ""
+		}
+
+		Deerclops: {
+			Label: Deerclops
+			Tooltip: ""
+		}
+
+		QueenBee: {
+			Label: Queen Bee
+			Tooltip: ""
+		}
+
+		BOC: {
+			Label: B O C
+			Tooltip: ""
+		}
+
+		EOC: {
+			Label: E O C
+			Tooltip: ""
+		}
+
+		EyeOC: {
+			Label: Eye O C
+			Tooltip: ""
+		}
+
+		KingSlime: {
+			Label: King Slime
+			Tooltip: ""
+		}
+	}
+
+	LiliesMusicPackEventConfig: {
+		DisplayName: Lilies Music Pack Event Config
+		Headers.Music: Music Header
+
+		MoonLordMother: {
+			Label: Moon Lord Mother
+			Tooltip: ""
+		}
+
+		LunarTowers: {
+			Label: Lunar Towers
+			Tooltip: ""
+		}
+	}
+}
+
+Items: {
+	DebugItem: {
+		DisplayName: Debug Item
+		Tooltip: ""
+	}
+}

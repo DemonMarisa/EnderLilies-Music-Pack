@@ -1,0 +1,103 @@
+用终焉的莉莉与终焉的马格诺利亚中的曲子替换了大量的游戏内曲子
+替换列表
+音乐事件
+
+进入世界时：Main Theme Lilies
+血肉之墙后：EnderLilies
+月球领主后：Bulbel 或 Hearts Stay Unchanged
+
+与灾厄遗产，非官方灾厄音乐包，原灾厄制作了兼容，音乐事件正常情况下应该不会相互覆盖
+
+环境替换
+
+森林白天：Harmonious
+森林黄昏：Dewdrop
+森林夜晚：Grudge
+
+下雨：A Nocturne for All
+
+城镇白天：Dignity - Save Ver
+城镇夜晚：Symbiosis - Save Ver
+
+城镇白天肉后：Dignity
+城镇夜晚肉后：Symbiosis
+
+城镇白天月后：Hearts Stay Unchanged Inst
+城镇夜晚月后：The White Witch
+
+城镇派对：Each person's dream
+城镇下雨：Yearning
+
+地下：Harmonious Inst
+洞穴层：The forsaken
+地狱：Root
+
+太空肉前：Magic coal mine - Save Ver
+太空肉后：Magic coal mine
+
+雪地肉前：North - Save Ver
+雪地肉后：North
+雪地地下：Bloom - Outro
+
+沙漠地表：Veol
+沙漠地下：Sweat
+
+丛林肉前：The Witch's Breath
+丛林肉后：The Witch's Breath - Save Ver
+丛林地下：Taboo
+丛林神庙：Abandonment
+
+海洋白天：Confidentiality
+海洋夜晚：White - Save Ver
+
+蘑菇地：CompoundingSave
+
+血腥地表：Evil - intro
+血腥地下：If You Gaze Long into an Abyss
+
+腐化地表：A secret
+腐化地下：Nectar
+
+神圣地表：Holy Land
+神圣地下：Metallic noise
+
+地牢：Debris and Bugs
+
+微光：See you later
+墓地：Prologue
+
+Boss替换
+
+月球领主：Mother Intro / Outro
+拜月教邪教徒：Magnolia denudata
+猪龙鱼公爵：Shingari
+光之女皇：Lily tree
+石巨人：The Sun - Intro
+世纪之花：V&D
+机械骷髅王：Humanity
+毁灭者：A Key
+双子魔眼：Sweat
+史莱姆女皇：Siegrid & Silva（来自b站BV1564y1b7oE）
+
+困难模式前
+
+血肉墙：AccoladeOutro
+巨鹿：BloomIntro
+骷髅王：Communication - Outro
+蜂王：Gewalt
+克苏鲁之脑：Helplessness - Outro
+世界吞噬者：Rosary - Outro
+克苏鲁之眼：Communication - Intro
+史莱姆王：Nervousness
+
+事件
+星云柱：EvilOutro
+星璇柱：Root
+星辰柱：White
+日耀柱：The Sun - Outro
+
+灯笼节：Main Theme Piano Edit
+沙尘暴：Pulsation
+
+血月：Homunculus
+日蚀：Accolade - Outro
