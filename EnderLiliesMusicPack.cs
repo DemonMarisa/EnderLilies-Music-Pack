@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,5 +43,9 @@ namespace EnderLiliesMusicPack
         }
         // 从灾厄音乐中获取音乐
         public int? GetMusicFromMusicMod(string songFilename) => MusicAvailable ? MusicLoader.GetMusicSlot(CalmusicMod, "Sounds/Music/" + songFilename) : null;
+
+        #region Netcode
+        public override void HandlePacket(BinaryReader reader, int whoAmI) => Netcode.HandlePacket(this, reader, whoAmI);
+        #endregion
     }
 }

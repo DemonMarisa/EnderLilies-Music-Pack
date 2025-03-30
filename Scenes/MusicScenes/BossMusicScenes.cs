@@ -8,6 +8,7 @@ using Terraria;
 using Terraria.ModLoader;
 using EnderLiliesMusicPack.Config;
 using EnderLiliesMusicPack.Utilities;
+using EnderLiliesMusicPack.LiliesPlayer;
 
 namespace EnderLiliesMusicPack.Scenes.MusicScenes
 {
@@ -264,20 +265,29 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
 
             public override bool IsSceneEffectActive(Player player)
             {
+                LiliesPlayerFlags liliesPlayer = player.LiliesPlayer();
+
                 bool MoonLordHandActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.MoonLordCore, player, 8500f);
-                return MoonLordHandActive && LiliesMusicPackBossConfig.Instance.MoonLordMother;
+                return MoonLordHandActive && LiliesMusicPackBossConfig.Instance.MoonLordMother && liliesPlayer.hasEnterMoonLordP2 == false;
             }
         }
         public class MoonLordP2 : ModSceneEffect
         {
+
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/MotherOutro");
 
             public override SceneEffectPriority Priority => (SceneEffectPriority)14;
 
             public override bool IsSceneEffectActive(Player player)
             {
+                LiliesPlayerFlags liliesPlayer = player.LiliesPlayer();
+
                 bool MoonLordP2Active = NPCUtils.IsThereNpcNearbyAndActiveCount(NPCID.MoonLordFreeEye, player, 8500f, 3);
-                return MoonLordP2Active && LiliesMusicPackBossConfig.Instance.MoonLordMother;
+
+                if(MoonLordP2Active && !liliesPlayer.hasEnterMoonLordP2)
+                    liliesPlayer.hasEnterMoonLordP2 = true;
+
+                return liliesPlayer.hasEnterMoonLordP2 && LiliesMusicPackBossConfig.Instance.MoonLordMother;
             }
         }
         #endregion
