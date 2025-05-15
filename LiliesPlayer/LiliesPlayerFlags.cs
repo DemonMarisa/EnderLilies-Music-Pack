@@ -39,16 +39,11 @@ namespace EnderLiliesMusicPack.LiliesPlayer
 
         // 是否进入过月总p2阶段，用于判断是否播放月总p2专属曲目
         public bool hasEnterMoonLordP2 = false;
-        public override void ResetEffects()
-        {
-            Main.NewText($"hasEnterMoonLordP2 : {hasEnterMoonLordP2}");
-        }
         public override void PostUpdateMiscEffects()
         {
             bool MoonLordHandActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.MoonLordCore, Player, 8500f);
             if (hasEnterMoonLordP2 && !MoonLordHandActive)
                 hasEnterMoonLordP2 = false;
-
         }
         public override void PreUpdate()
         {

@@ -10,8 +10,9 @@
 
 环境替换
 
-森林白天：Harmonious
-森林黄昏：Dewdrop
+森林凌晨：
+森林白天：Dewdrop
+森林黄昏：Harmonious
 森林夜晚：Grudge
 
 下雨：A Nocturne for All
@@ -25,8 +26,8 @@
 城镇白天月后：Hearts Stay Unchanged Inst
 城镇夜晚月后：The White Witch
 
-城镇派对：Each person's dream
-城镇下雨：Yearning
+城镇派对：Each perFson's dream
+城镇下雨：YearningF
 
 地下：Harmonious Inst
 洞穴层：The forsaken

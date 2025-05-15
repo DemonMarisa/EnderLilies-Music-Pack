@@ -26,28 +26,20 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
                 return !Main.dayTime && player.ZoneOverworldHeight && !player.ZoneBeach && LiliesMusicPackBiomeConfig.Instance.Forest;
             }
         }
-        //森林白天
-        public class ForestDayMorning : ModSceneEffect
+        //森林凌晨
+        public class ForestDayDawn : ModSceneEffect
         {
-            public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Biome/Harmonious");
+            public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Biome/Awakening");
 
             public override SceneEffectPriority Priority => SceneEffectPriority.BiomeLow;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                return Main.time >= 10800 && Main.time < 27000 && Main.dayTime && player.ZoneOverworldHeight && !(player.ZoneBeach || player.ZoneHallow) && LiliesMusicPackBiomeConfig.Instance.Forest;
-            }
-
-            public override void SpecialVisuals(Player player, bool isActive)
-            {
-                if (isActive && Main.time >= 10800 && Main.time < 11100 && Main.curMusic == Music && Main.musicFade[Main.curMusic] < 0.25f && Main.dayRate == 1)
-                {
-                    Main.musicFade[Main.curMusic] = 0.25f;
-                }
+                return Main.time <= 16200 && Main.dayTime && player.ZoneOverworldHeight && !(player.ZoneBeach || player.ZoneHallow);
             }
         }
-        // 森林白天下午
-        public class ForestDayAfternoon : ModSceneEffect
+        //森林白天
+        public class ForestDayMorning : ModSceneEffect
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Biome/Dewdrop");
 
@@ -55,15 +47,20 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
 
             public override bool IsSceneEffectActive(Player player)
             {
-                return Main.time >= 27000 && Main.time < 43200 && Main.dayTime && player.ZoneOverworldHeight && !(player.ZoneBeach || player.ZoneHallow) && LiliesMusicPackBiomeConfig.Instance.Forest;
+                return Main.time >= 16200 && Main.time < 37800 && Main.dayTime && player.ZoneOverworldHeight && !(player.ZoneBeach || player.ZoneHallow) && LiliesMusicPackBiomeConfig.Instance.Forest;
             }
+        }
 
-            public override void SpecialVisuals(Player player, bool isActive)
+        // 森林白天下午
+        public class ForestDayAfternoon : ModSceneEffect
+        {
+            public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Biome/Harmonious");
+
+            public override SceneEffectPriority Priority => SceneEffectPriority.BiomeLow;
+
+            public override bool IsSceneEffectActive(Player player)
             {
-                if (isActive && Main.time >= 27000 && Main.time < 27300 && Main.curMusic == Music && Main.musicFade[Main.curMusic] < 0.25f && Main.dayRate == 1)
-                {
-                    Main.musicFade[Main.curMusic] = 0.25f;
-                }
+                return Main.time >= 37800 && Main.dayTime && player.ZoneOverworldHeight && !(player.ZoneBeach || player.ZoneHallow) && LiliesMusicPackBiomeConfig.Instance.Forest;
             }
         }
         #endregion

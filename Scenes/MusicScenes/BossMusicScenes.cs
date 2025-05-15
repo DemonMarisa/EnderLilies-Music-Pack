@@ -20,7 +20,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/Nervousness");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)8;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)10;
 
             public override bool IsSceneEffectActive(Player player)
             {
@@ -34,7 +34,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/CommunicationIntro");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)8;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)10;
 
             public override bool IsSceneEffectActive(Player player)
             {
@@ -48,7 +48,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/RosaryOutro");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)8;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)10;
 
             public override bool IsSceneEffectActive(Player player)
             {
@@ -62,7 +62,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/HelplessnessOutro");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)8;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)10;
 
             public override bool IsSceneEffectActive(Player player)
             {
@@ -76,7 +76,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/Gewalt");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)8;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)10;
 
             public override bool IsSceneEffectActive(Player player)
             {
@@ -90,7 +90,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/CommunicationOutro");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)8;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)10;
 
             public override bool IsSceneEffectActive(Player player)
             {
@@ -104,7 +104,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/BloomIntro");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)8;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)10;
 
             public override bool IsSceneEffectActive(Player player)
             {
