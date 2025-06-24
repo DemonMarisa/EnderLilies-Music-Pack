@@ -1,3 +1,4 @@
+using EnderLiliesMusicPack.Common;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,6 +32,8 @@ namespace EnderLiliesMusicPack
             // ªÒ»°‘÷∂Ú∂ÓÕ‚“Ù¿÷
             UnCalmusicMod = null;
             ModLoader.TryGetMod("UnCalamityModMusic", out UnCalmusicMod);
+
+            MusicPathing.InitalizeMusicPaths(Instance);
         }
         public override void Unload()
         {

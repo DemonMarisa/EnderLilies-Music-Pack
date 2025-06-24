@@ -10,7 +10,7 @@ using Terraria;
 using Microsoft.Xna.Framework;
 using EnderLiliesMusicPack.MusicSystem;
 
-namespace EnderLiliesMusicPack.Items
+namespace EnderLiliesMusicPack.Content.Items
 {
     public class DebugItem : ModItem
     {

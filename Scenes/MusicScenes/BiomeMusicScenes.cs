@@ -97,13 +97,24 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         #region 地狱
         public class Underworld : ModSceneEffect
         {
+            public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Biome/RootSave");
+
+            public override SceneEffectPriority Priority => SceneEffectPriority.Environment;
+
+            public override bool IsSceneEffectActive(Player player)
+            {
+                return player.ZoneUnderworldHeight && !(LiliesPlayerFlags.ZoneBrimstoneCrags || LiliesPlayerFlags.ZoneProfanedTemple) && LiliesMusicPackBiomeConfig.Instance.UnderWorld && !(LiliesPlayerFlags.inTown || LiliesPlayerFlags.inUgTown) && !Main.hardMode;
+            }
+        }
+        public class UnderworldHardMod : ModSceneEffect
+        {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Biome/Root");
 
             public override SceneEffectPriority Priority => SceneEffectPriority.Environment;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                return player.ZoneUnderworldHeight && !(LiliesPlayerFlags.ZoneBrimstoneCrags || LiliesPlayerFlags.ZoneProfanedTemple) && LiliesMusicPackBiomeConfig.Instance.UnderWorld;
+                return player.ZoneUnderworldHeight && !(LiliesPlayerFlags.ZoneBrimstoneCrags || LiliesPlayerFlags.ZoneProfanedTemple) && LiliesMusicPackBiomeConfig.Instance.UnderWorld && !(LiliesPlayerFlags.inTown || LiliesPlayerFlags.inUgTown);
             }
         }
         #endregion
@@ -270,6 +281,17 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         public class GlowingMushroomFields : ModSceneEffect
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Biome/CompoundingSave");
+
+            public override SceneEffectPriority Priority => SceneEffectPriority.BiomeHigh;
+
+            public override bool IsSceneEffectActive(Player player)
+            {
+                return player.ZoneGlowshroom && LiliesMusicPackBiomeConfig.Instance.MushroomFields && !Main.hardMode;
+            }
+        }
+        public class GlowingMushroomFieldsHardMod : ModSceneEffect
+        {
+            public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Biome/Compounding");
 
             public override SceneEffectPriority Priority => SceneEffectPriority.BiomeHigh;
 

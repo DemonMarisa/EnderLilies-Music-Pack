@@ -10,6 +10,8 @@ using Terraria.ModLoader.IO;
 using Terraria.ModLoader;
 using Terraria;
 using EnderLiliesMusicPack.Config;
+using EnderLiliesMusicPack.LiliesPlayer;
+using Terraria.GameContent.Events;
 
 namespace EnderLiliesMusicPack.MusicSystem
 {
@@ -46,9 +48,6 @@ namespace EnderLiliesMusicPack.MusicSystem
 
         public override void OnModLoad()
         {
-            //340.4d为莉莉音乐包的肉后播放BGM时长加灾厄额外音乐包的肉后音乐事件时长，进入世界后的音乐是优先播放莉莉的
-            double ENDERLILIESTime = EnderLiliesMusicPack.Instance.UnCalmusicMod == null ? 132d : 340d;
-
             // 现在这里的播放会杀掉灾厄的曲子和灾厄额外音乐包的曲子，想办法解决一下
             // 以及肉后曲子会被灾厄额外音乐包的曲子覆盖
             static void AddEntry(string eventId, string songName, TimeSpan length, Func<bool> shouldPlay, Func<bool> enabled, TimeSpan? introSilence = null, TimeSpan? outroSilence = null)
@@ -59,26 +58,19 @@ namespace EnderLiliesMusicPack.MusicSystem
                 EventCollection.Add(entry);
             }
 
-            // 获取灾厄的BGM，将他们的音乐事件添加到同一个列表中
-            static void CalAddEntry(string eventId, string songName, TimeSpan length, Func<bool> shouldPlay, Func<bool> enabled, TimeSpan? introSilence = null, TimeSpan? outroSilence = null)
-            {
-                MusicEventEntry entry = new(eventId, EnderLiliesMusicPack.Instance.GetMusicFromMusicMod(songName).Value, length, introSilence ?? TimeSpan.Zero, outroSilence ?? TimeSpan.Zero, shouldPlay, enabled);
-                EventCollection.Add(entry);
-            }
-
             //进入世界播放Main Theme Lilies
-            AddEntry("LiliesFirstEnterWorld", "MainThemeLilies", TimeSpan.FromSeconds(58d),
-                () => true, () => LiliesMusicPackConfig.Instance.Prologue);
+            AddEntry("LiliesFirstEnterWorld", "MainThemeLilies", TimeSpan.FromSeconds(64d),
+                () => true, () => LiliesMusicPackConfig.Instance.MainThemeLilies);
+
+            //进入世界播放Main Theme Magnolia
+            AddEntry("MagnoliaFirstEnterWorld", "MainthemeMagnolia", TimeSpan.FromSeconds(143d),
+                () => true, () => LiliesMusicPackConfig.Instance.MainthemeMagnolia);
 
             //肉后播放ENDERLILIES
-            AddEntry("LiliesHardmodeStarted", "ENDERLILIES", TimeSpan.FromSeconds(ENDERLILIESTime),
+            AddEntry("LiliesHardmodeStarted", "ENDERLILIES", TimeSpan.FromSeconds(132d),
                 () => Main.hardMode, () => LiliesMusicPackConfig.Instance.ENDERLILIES);
 
-            //这是适配灾厄的音乐事件，用于播放灾厄月后的插曲2
-            CalAddEntry("MLDefeatedLili", "Interlude2", TimeSpan.FromSeconds(191.912d),
-                () => NPC.downedMoonlord, () => LiliesMusicPackConfig.Instance.CalInterlude2);
-
-            //月后播放Awakening
+            //月后播放Bulbel
             AddEntry("LiliesDownedMoonLord", "Bulbel", TimeSpan.FromSeconds(206d),
                 () => NPC.downedMoonlord, () => LiliesMusicPackConfig.Instance.Bulbel);
 
@@ -107,7 +99,9 @@ namespace EnderLiliesMusicPack.MusicSystem
 
                 oldWorld = false;
             }
-
+            // 有其它任何事件正在进行时，不更新播放
+            if (UniverseEventFlag())
+                return;
             //PlayedEvents.Remove("YharonDefeated");
 
             // If the event has just finished, we want a little silence before fading back to normal
@@ -171,6 +165,11 @@ namespace EnderLiliesMusicPack.MusicSystem
 
             if (TrackStart is not null)
             {
+                Player player = Main.LocalPlayer;
+
+                if(player.miscCounter % 60 == 0)
+                Main.NewText($"Current Event: {CurrentEvent.Id} - {CurrentEvent.Song} - {CurrentEvent.Length}");
+
                 if (TrackStart > DateTime.Now)
                 {
                     int silenceSlot = MusicLoader.GetMusicSlot(Mod, "Music/Silence");
@@ -205,7 +204,11 @@ namespace EnderLiliesMusicPack.MusicSystem
                 }
             }
         }
-
+        public static bool UniverseEventFlag()
+        {
+            Player player = Main.player[Main.myPlayer];
+            return !CreditsRollEvent.IsEventOngoing && !player.hasCreditsSceneMusicBox && LiliesPlayerFlags.CalamityMusicEventInactive && LiliesPlayerFlags.VCalamityMusicEventInactive;
+        }
         /// <summary>
         /// Watches for the game minimizing at any point, and adjusts the amount of time to play the song for accordingly
         /// </summary>

@@ -1,0 +1,15 @@
+iles: {
+	$parentVal: {
+		$parentVal: Mods.EnderLiliesMusicPack.MusicBoxTiles
+	}
+}
+
+MainThemeLiliesMusicBox: {
+	DisplayName: Main Theme Lilies Music Box
+	Tooltip: ""
+}
+
+MainThemeMagnoliaMusicBox: {
+	DisplayName: Main Theme Magnolia Music Box
+	Tooltip: ""
+}

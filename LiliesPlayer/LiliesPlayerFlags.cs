@@ -1,9 +1,9 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
-using static EnderLiliesMusicPack.Scenes.MusicScenes.TownMusicScenes;
 using EnderLiliesMusicPack.Utilities;
 using System;
+using System.Reflection;
 
 namespace EnderLiliesMusicPack.LiliesPlayer
 {
@@ -31,7 +31,10 @@ namespace EnderLiliesMusicPack.LiliesPlayer
         public static bool ZoneAstralInfection;
         public static bool ZoneAbyss;
         public static bool ZoneSunkenSea;
-
+        // 与灾厄音乐事件的适配
+        public static bool CalamityMusicEventInactive = true;
+        // 与VCMM音乐事件的适配
+        public static bool VCalamityMusicEventInactive = true;
         // 炼狱亵渎神庙
         public static bool ZoneProfanedTemple;
 
@@ -103,6 +106,43 @@ namespace EnderLiliesMusicPack.LiliesPlayer
                 infernumMode = (bool)infernum.Call("GetInfernumActive");
                 ZoneProfanedTemple = player.InModBiome(infernum.Find<ModBiome>("ProfanedTempleBiome"));
             }
+
+            CalamityMusicEventInactive = CalamityMusicEvent() == null;
+            VCalamityMusicEventInactive = VCalamityMusicEvent() == null;
+        }
+        // 跟踪原灾音乐事件播放
+        public static DateTime? CalamityMusicEvent()
+        {
+            if (ModLoader.TryGetMod("CalamityMod", out Mod calamity))
+            {
+                Type musicEventType = calamity.GetType().Assembly.GetType("CalamityMod.Systems.MusicEventSystem");
+
+                if (musicEventType != null)
+                {
+                    PropertyInfo trackStartProperty = musicEventType.GetProperty("TrackStart", BindingFlags.Static | BindingFlags.Public);
+                    DateTime? trackStartValue = trackStartProperty.GetValue(null) as DateTime?;
+
+                    return trackStartValue;
+                }
+            }
+            return null;
+        }
+        // 跟踪VCMM音乐事件播放
+        public static DateTime? VCalamityMusicEvent()
+        {
+            if (ModLoader.TryGetMod("UnCalamityModMusic", out Mod calamity))
+            {
+                Type musicEventType = calamity.GetType().Assembly.GetType("UnCalamityModMusic.Common.MusicEvents");
+
+                if (musicEventType != null)
+                {
+                    PropertyInfo trackStartProperty = musicEventType.GetProperty("TrackStart", BindingFlags.Static | BindingFlags.Public);
+                    DateTime? trackStartValue = trackStartProperty.GetValue(null) as DateTime?;
+
+                    return trackStartValue;
+                }
+            }
+            return null;
         }
     }
 }

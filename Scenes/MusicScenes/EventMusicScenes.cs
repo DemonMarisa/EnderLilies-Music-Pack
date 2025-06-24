@@ -40,7 +40,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         }
         public class LunarTowersVortex : ModSceneEffect
         {
-            public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Event/Root");
+            public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Event/Shingari");
 
             public override SceneEffectPriority Priority => SceneEffectPriority.BossMedium;
 
@@ -109,7 +109,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Event/Homunculus");
 
-            public override SceneEffectPriority Priority => SceneEffectPriority.Environment;
+            public override SceneEffectPriority Priority => SceneEffectPriority.Event;
 
             public override bool IsSceneEffectActive(Player player)
             {
@@ -127,7 +127,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Event/AccoladeOutro");
 
-            public override SceneEffectPriority Priority => SceneEffectPriority.Environment;
+            public override SceneEffectPriority Priority => SceneEffectPriority.Event;
 
             public override bool IsSceneEffectActive(Player player)
             {

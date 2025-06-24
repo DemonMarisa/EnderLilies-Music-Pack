@@ -2,7 +2,7 @@
 替换列表
 音乐事件
 
-进入世界时：Main Theme Lilies
+进入世界时：Main Theme Lilies 或 Main Theme Magnolia
 血肉之墙后：EnderLilies
 月球领主后：Bulbel 或 Hearts Stay Unchanged
 
@@ -27,11 +27,12 @@
 城镇夜晚月后：The White Witch
 
 城镇派对：Each perFson's dream
-城镇下雨：YearningF
+城镇下雨：Yearning
 
 地下：Harmonious Inst
 洞穴层：The forsaken
-地狱：Root
+地狱：Root - Save Ver
+地狱肉后：Root
 
 太空肉前：Magic coal mine - Save Ver
 太空肉后：Magic coal mine
@@ -51,7 +52,8 @@
 海洋白天：Confidentiality
 海洋夜晚：White - Save Ver
 
-蘑菇地：CompoundingSave
+蘑菇地：Compounding - Save Ver
+蘑菇地肉后：Compounding
 
 血腥地表：Evil - intro
 血腥地下：If You Gaze Long into an Abyss
@@ -93,7 +95,7 @@ Boss替换
 
 事件
 星云柱：EvilOutro
-星璇柱：Root
+星璇柱：Shingari
 星辰柱：White
 日耀柱：The Sun - Outro
 

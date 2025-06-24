@@ -19,7 +19,11 @@ namespace EnderLiliesMusicPack.Config
         [Header("Music")]
         [BackgroundColor(211, 211, 211, 192)]
         [DefaultValue(true)]
-        public bool Prologue { get; set; }
+        public bool MainThemeLilies { get; set; }
+
+        [BackgroundColor(211, 211, 211, 192)]
+        [DefaultValue(true)]
+        public bool MainthemeMagnolia { get; set; }
 
         [BackgroundColor(211, 211, 211, 192)]
         [DefaultValue(true)]
