@@ -15,17 +15,24 @@ using Terraria.Utilities;
 using Terraria;
 using Microsoft.Xna.Framework;
 using EnderLiliesMusicPack.Utilities;
+using EnderLiliesMusicPack.Assets.Textures;
+using Humanizer;
+using EnderLiliesMusicPack.Content.Rarity;
 
 namespace EnderLiliesMusicPack.Content.Tiles
 {
     public abstract class BaseMusicBoxTile : ModTile, ILocalizedModType
     {
-        public abstract int musicBoxID { get; }
+        public abstract int belongwhom { get; }
+        public int liliesID = 0;
+        public int lilacID = 1;
+        public float alphaMult = 0;
         public new string LocalizationCategory => "MusicBoxTiles";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
             Main.tileObsidianKill[Type] = true;
+            TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.DisableSmartCursor[Type] = true;
 
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
@@ -35,7 +42,7 @@ namespace EnderLiliesMusicPack.Content.Tiles
             TileObjectData.newTile.StyleLineSkip = 2;
             TileObjectData.addTile(Type);
 
-            AddMapEntry(Color.Sienna, LiliesUtils.GetText("MusicBoxTiles"));
+            AddMapEntry(new Color(191, 142, 111), LiliesUtils.GetText("MusicBoxTiles"));
         }
 
         public override void MouseOver(int i, int j)
@@ -43,14 +50,13 @@ namespace EnderLiliesMusicPack.Content.Tiles
             Player player = Main.LocalPlayer;
             player.noThrow = 2;
             player.cursorItemIconEnabled = true;
-            player.cursorItemIconID = musicBoxID;
+            player.cursorItemIconID = TileLoader.GetItemDropFromTypeAndStyle(Type);
         }
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings)
         {
             return true;
         }
-
         public override void DrawEffects(int i, int j, SpriteBatch spriteBatch, ref TileDrawInfo drawData)
         {
             if (Lighting.UpdateEveryFrame && new FastRandom(Main.TileFrameSeed).WithModifier(i, j).Next(4) != 0)
@@ -60,27 +66,50 @@ namespace EnderLiliesMusicPack.Content.Tiles
 
             Tile tile = Main.tile[i, j];
 
-            if (!TileDrawing.IsVisible(tile) || tile.TileFrameX != 36 || tile.TileFrameY % 36 != 0 || (int)Main.timeForVisualEffects % 7 != 0 || !Main.rand.NextBool(3))
+            if (MusicBoxOFF(tile))
             {
                 return;
             }
 
-            int MusicNote = Main.rand.Next(570, 573);
-            Vector2 SpawnPosition = new Vector2(i * 16 + 8, j * 16 - 8);
-            Vector2 NoteMovement = new Vector2(Main.WindForVisuals * 2f, -0.5f);
-            NoteMovement.X *= Main.rand.NextFloat(0.5f, 1.5f);
-            NoteMovement.Y *= Main.rand.NextFloat(0.5f, 1.5f);
-            switch (MusicNote)
-            {
-                case 572:
-                    SpawnPosition.X -= 8f;
-                    break;
-                case 571:
-                    SpawnPosition.X -= 4f;
-                    break;
-            }
+            DrawLight(i, j, spriteBatch);
+        }
+        public static bool MusicBoxOFF(Tile tile)
+        {
+            return !TileDrawing.IsVisible(tile) || tile.TileFrameX != 36 || tile.TileFrameY % 36 != 0;
+        }
+        public void DrawLight(int i, int j, SpriteBatch spriteBatch)
+        {
+            #region 绘制辉光
 
-            Gore.NewGore(new EntitySource_TileUpdate(i, j), SpawnPosition, NoteMovement, MusicNote, 0.8f);
+            // 范围100-200的透明度变化
+            float alphaFactor = (float)(Math.Sin(Main.GlobalTimeWrappedHourly * MathHelper.TwoPi / 5f) + 1) / 2; // 转换为0-1范围，而不是-1到1范围
+            int alpha = 155 + (int)(100 * alphaFactor); // 映射到125-200范围
+
+            Color blinkColor;
+
+            if (belongwhom == LiliesRarityID.liliesID)
+                blinkColor = new Color(255, 255, 255, alpha);
+            else if (belongwhom == LiliesRarityID.lilacID)
+                blinkColor = new Color(0, 191, 255, alpha);
+            else
+                blinkColor = new Color(255, 255, 255, alpha);
+
+            // 保存原始混合状态
+            // 重置绘制批次来设置叠加混合模式
+            var originalBlendState = Main.spriteBatch.GraphicsDevice.BlendState;
+            spriteBatch.End();
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.Additive);
+
+            // 世界坐标转化为屏幕坐标
+            Vector2 position = new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - (int)Main.screenPosition.Y);
+            // 我不知道为什么需要偏移6.5个身位才能是物块中央
+            spriteBatch.Draw(LilyTextureRegistry.LilyLight.Value, position + new Vector2(208, 212), null, blinkColor, 0f, LilyTextureRegistry.LilyLight.Size() / 2, 0.55f, SpriteEffects.None, 0f);
+
+            // 绘制后恢复原始状态
+            spriteBatch.End();
+            spriteBatch.Begin();
+
+            #endregion
         }
     }
 }

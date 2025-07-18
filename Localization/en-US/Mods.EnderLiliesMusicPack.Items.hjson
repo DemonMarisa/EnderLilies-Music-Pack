@@ -1,0 +1,9 @@
+CheckModCompItem: {
+	DisplayName: Check Mod Comp Item
+	Tooltip: ""
+}
+
+DebugItem: {
+	DisplayName: Debug Item
+	Tooltip: ""
+}

@@ -9,6 +9,6 @@ namespace EnderLiliesMusicPack.Content.MusicBoxs.MusicEvent
     {
         public override string MusicName => MusicPathing.MainThemeLilies;
         public override int MusicBoxTile => ModContent.TileType<MainThemeLiliesMusicBoxTile>();
-        public override int LiliesOrLilac => LiliesRarityID.liliesID;
+        public override int LiliesOrLilac => (int)LiliesRarityID.liliesID;
     }
 }

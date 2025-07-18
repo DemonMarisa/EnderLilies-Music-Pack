@@ -1,4 +1,5 @@
 ﻿using EnderLiliesMusicPack.Content.MusicBoxs.MusicEvent;
+using EnderLiliesMusicPack.Content.Rarity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace EnderLiliesMusicPack.Content.Tiles.MusicEvent
 {
     public class MainThemeLiliesMusicBoxTile : BaseMusicBoxTile
     {
-        public override int musicBoxID => ModContent.ItemType<MainThemeLiliesMusicBox>();
+        public override int belongwhom => LiliesRarityID.liliesID;
     }
 }

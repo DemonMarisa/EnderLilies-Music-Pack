@@ -1,4 +1,4 @@
-﻿using EnderLiliesMusicPack.MusicSystem;
+﻿using EnderLiliesMusicPack.Core.MusicSystem;
 using System;
 using System.Collections.Generic;
 using System.IO;

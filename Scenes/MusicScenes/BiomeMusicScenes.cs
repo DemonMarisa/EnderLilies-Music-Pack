@@ -211,18 +211,18 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Biome/TheWitchsBreath");
 
-            public override SceneEffectPriority Priority => SceneEffectPriority.BiomeLow;
+            public override SceneEffectPriority Priority => SceneEffectPriority.BiomeHigh;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                return player.ZoneDesert && !LiliesPlayerFlags.ugDesertOriginalHeight && !Main.hardMode && LiliesMusicPackBiomeConfig.Instance.Jungle;
+                return player.ZoneJungle && player.ZoneOverworldHeight && !Main.hardMode && LiliesMusicPackBiomeConfig.Instance.Jungle;
             }
         }
         public class JunglePF : ModSceneEffect
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Biome/TheWitchsBreathSave");
 
-            public override SceneEffectPriority Priority => SceneEffectPriority.BiomeMedium;
+            public override SceneEffectPriority Priority => SceneEffectPriority.BiomeHigh;
 
             public override bool IsSceneEffectActive(Player player)
             {
@@ -233,7 +233,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Biome/Taboo");
 
-            public override SceneEffectPriority Priority => SceneEffectPriority.BiomeMedium;
+            public override SceneEffectPriority Priority => SceneEffectPriority.BiomeHigh;
 
             public override bool IsSceneEffectActive(Player player)
             {

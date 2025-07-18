@@ -40,7 +40,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         }
         public class LunarTowersVortex : ModSceneEffect
         {
-            public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Event/Shingari");
+            public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Event/Coding");
 
             public override SceneEffectPriority Priority => SceneEffectPriority.BossMedium;
 

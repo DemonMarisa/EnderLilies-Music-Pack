@@ -54,7 +54,7 @@ namespace EnderLiliesMusicPack.Utilities
         /// <param name="player">玩家单位</param>
         /// <param name="range">最大检索距离</param>
         /// <returns>真:表示有这个npc</returns>
-        public static bool IsThereNpcNearbyAndchaseable(int npcType, Player player, float range)
+        public static bool IsThereNpcNearbyAndActiveNorange(int npcType)
         {
             if (npcType <= 0)
                 return false;
@@ -62,7 +62,7 @@ namespace EnderLiliesMusicPack.Utilities
             if (npcIndex != -1)
             {
                 NPC npc = Main.npc[npcIndex];
-                return npc.active && npc.Distance(player.Center) <= range && npc.chaseable;
+                return npc.active;
             }
             return false;
         }
@@ -74,7 +74,7 @@ namespace EnderLiliesMusicPack.Utilities
         /// <param name="range">最大检索距离</param>
         /// <param name="requiredCount">检索到的NPC数量要求</param>
         /// <returns>真:表示有这个npc</returns>
-        public static bool IsThereNpcNearbyAndActiveCount(int npcType, Player player, float range, int requiredCount = 1)
+        public static bool IsThereNpcNearbyAndActiveCount(int npcType, int requiredCount = 1)
         {
             if (npcType <= 0 || requiredCount <= 0)
                 return false;
@@ -83,7 +83,7 @@ namespace EnderLiliesMusicPack.Utilities
             for (int i = 0; i < Main.maxNPCs; i++)
             {
                 NPC npc = Main.npc[i];
-                if (npc.active && npc.type == npcType && npc.Distance(player.Center) <= range)
+                if (npc.active && npc.type == npcType)
                 {
                     count++;
                     if (count >= requiredCount)

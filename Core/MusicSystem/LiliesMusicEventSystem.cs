@@ -13,7 +13,7 @@ using EnderLiliesMusicPack.Config;
 using EnderLiliesMusicPack.LiliesPlayer;
 using Terraria.GameContent.Events;
 
-namespace EnderLiliesMusicPack.MusicSystem
+namespace EnderLiliesMusicPack.Core.MusicSystem
 {
     public record class MusicEventEntry(string Id, int Song, TimeSpan Length, TimeSpan IntroSilence, TimeSpan OutroSilence, Func<bool> ShouldPlay, Func<bool> Enabled);
     public class LiliesMusicEventSystem : ModSystem
@@ -63,7 +63,7 @@ namespace EnderLiliesMusicPack.MusicSystem
                 () => true, () => LiliesMusicPackConfig.Instance.MainThemeLilies);
 
             //进入世界播放Main Theme Magnolia
-            AddEntry("MagnoliaFirstEnterWorld", "MainthemeMagnolia", TimeSpan.FromSeconds(143d),
+            AddEntry("MagnoliaFirstEnterWorld", "MainThemeMagnolia", TimeSpan.FromSeconds(143d),
                 () => true, () => LiliesMusicPackConfig.Instance.MainthemeMagnolia);
 
             //肉后播放ENDERLILIES
@@ -99,9 +99,18 @@ namespace EnderLiliesMusicPack.MusicSystem
 
                 oldWorld = false;
             }
+
             // 有其它任何事件正在进行时，不更新播放
             if (UniverseEventFlag())
+            {
+                // 与VCMM的肉后BGM适配
+                if (LiliesPlayerFlags.VCalamityMusicEventInactive == false)
+                    PlayedEvents.Remove("LiliesHardmodeStarted");
                 return;
+            }
+
+            Player player = Main.LocalPlayer;
+
             //PlayedEvents.Remove("YharonDefeated");
 
             // If the event has just finished, we want a little silence before fading back to normal
@@ -165,18 +174,16 @@ namespace EnderLiliesMusicPack.MusicSystem
 
             if (TrackStart is not null)
             {
-                Player player = Main.LocalPlayer;
-
-                if(player.miscCounter % 60 == 0)
-                Main.NewText($"Current Event: {CurrentEvent.Id} - {CurrentEvent.Song} - {CurrentEvent.Length}");
-
+                /*
+                if (player.miscCounter % 180 == 0)
+                    Main.NewText($"Current Event: {CurrentEvent.Id} - {CurrentEvent.Song} - {CurrentEvent.Length}");
+                */
                 if (TrackStart > DateTime.Now)
                 {
                     int silenceSlot = MusicLoader.GetMusicSlot(Mod, "Music/Silence");
                     Main.musicBox2 = silenceSlot;
                     NoFade = true;
                 }
-
                 else
                 {
                     Main.musicBox2 = CurrentEvent.Song;
@@ -207,7 +214,20 @@ namespace EnderLiliesMusicPack.MusicSystem
         public static bool UniverseEventFlag()
         {
             Player player = Main.player[Main.myPlayer];
-            return !CreditsRollEvent.IsEventOngoing && !player.hasCreditsSceneMusicBox && LiliesPlayerFlags.CalamityMusicEventInactive && LiliesPlayerFlags.VCalamityMusicEventInactive;
+            // 这俩的事件有任何一个播放都会ban掉这里的播放
+
+            if (LiliesPlayerFlags.CalamityMusicEventInactive == false || LiliesPlayerFlags.VCalamityMusicEventInactive == false)
+            {
+                return true;
+            }
+
+            // 处于原版制作列表是ban掉这里的播放
+            if (CreditsRollEvent.IsEventOngoing || player.hasCreditsSceneMusicBox)
+            {
+                return true;
+            }
+
+            return false;
         }
         /// <summary>
         /// Watches for the game minimizing at any point, and adjusts the amount of time to play the song for accordingly

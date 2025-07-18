@@ -9,6 +9,7 @@ using Terraria.ModLoader;
 using EnderLiliesMusicPack.Config;
 using EnderLiliesMusicPack.Utilities;
 using EnderLiliesMusicPack.LiliesPlayer;
+using EnderLiliesMusicPack.Core.BossMusicOverride;
 
 namespace EnderLiliesMusicPack.Scenes.MusicScenes
 {
@@ -20,12 +21,11 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/Nervousness");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)10;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)12;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool KingSlimeActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.KingSlime, player, 8500f);
-                return KingSlimeActive && LiliesMusicPackBossConfig.Instance.KingSlime;
+                return BossMusicOverride.overrideKingSlimeMusic && LiliesMusicPackBossConfig.Instance.KingSlime;
             }
         }
         #endregion
@@ -34,26 +34,24 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/CommunicationIntro");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)10;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)12;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool EyeOCActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.EyeofCthulhu, player, 8500f);
-                return EyeOCActive && LiliesMusicPackBossConfig.Instance.EyeOC;
+                return BossMusicOverride.overrideEOCMusic && LiliesMusicPackBossConfig.Instance.EyeOC;
             }
         }
         #endregion
         #region 世吞
-        public class EOC : ModSceneEffect
+        public class EOW : ModSceneEffect
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/RosaryOutro");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)10;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)12;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool EOCActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.EaterofWorldsHead, player, 8500f);
-                return EOCActive && LiliesMusicPackBossConfig.Instance.BOC;
+                return BossMusicOverride.overrideEOWMusic && LiliesMusicPackBossConfig.Instance.BOC;
             }
         }
         #endregion
@@ -62,12 +60,11 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/HelplessnessOutro");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)10;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)12;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool BOCActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.BrainofCthulhu, player, 8500f);
-                return BOCActive && LiliesMusicPackBossConfig.Instance.BOC;
+                return BossMusicOverride.overrideBOCMusic && LiliesMusicPackBossConfig.Instance.BOC;
             }
         }
         #endregion
@@ -76,12 +73,11 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/Gewalt");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)10;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)12;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool QueenBeeActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.QueenBee, player, 8500f);
-                return QueenBeeActive && LiliesMusicPackBossConfig.Instance.QueenBee;
+                return BossMusicOverride.overrideQueenBeeMusic && LiliesMusicPackBossConfig.Instance.QueenBee;
             }
         }
         #endregion
@@ -94,8 +90,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool SkeletronActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.SkeletronHead, player, 8500f);
-                return SkeletronActive && LiliesMusicPackBossConfig.Instance.Skeletron;
+                return BossMusicOverride.overrideSkeletronMusic && LiliesMusicPackBossConfig.Instance.Skeletron;
             }
         }
         #endregion
@@ -108,8 +103,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool DeerclopsActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.Deerclops, player, 8500f);
-                return DeerclopsActive && LiliesMusicPackBossConfig.Instance.Deerclops;
+                return BossMusicOverride.overrideDeerclopsMusic && LiliesMusicPackBossConfig.Instance.Deerclops;
             }
         }
         #endregion
@@ -118,12 +112,11 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/AccoladeOutro");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)9;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)12;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool WallofFleshActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.WallofFlesh, player, 8500f);
-                return WallofFleshActive && LiliesMusicPackBossConfig.Instance.WOF;
+                return BossMusicOverride.overrideWallofFleshMusic && LiliesMusicPackBossConfig.Instance.WOF;
             }
         }
         #endregion
@@ -134,26 +127,24 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/SiegridSilva");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)9;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)13;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool QueenSlimeActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.QueenSlimeBoss, player, 8500f);
-                return QueenSlimeActive && LiliesMusicPackBossConfig.Instance.QueenSlimeBoss;
+                return BossMusicOverride.overrideQueenSlimeMusic && LiliesMusicPackBossConfig.Instance.QueenSlimeBoss;
             }
         }
         #endregion
         #region 双子
         public class TheTwins : ModSceneEffect
         {
-            public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/Sweat");
+            public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/Gilroy");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)9;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)13;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool TheTwinsActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.Retinazer, player, 8500f) || NPCUtils.IsThereNpcNearbyAndActive(NPCID.Spazmatism, player, 8500f);
-                return TheTwinsActive && LiliesMusicPackBossConfig.Instance.TheTwins;
+                return BossMusicOverride.overrideTheTwinsMusic && LiliesMusicPackBossConfig.Instance.TheTwins;
             }
         }
         #endregion
@@ -162,12 +153,11 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/Akey");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)9;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)13;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool TheDestroyerActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.TheDestroyer, player, 8500f);
-                return TheDestroyerActive && LiliesMusicPackBossConfig.Instance.TheDestroyer;
+                return BossMusicOverride.overrideTheDestroyerMusic && LiliesMusicPackBossConfig.Instance.TheDestroyer;
             }
         }
         #endregion
@@ -176,12 +166,11 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/Humanity");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)9;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)13;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool SkeletronPrimeActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.SkeletronPrime, player, 8500f);
-                return SkeletronPrimeActive && LiliesMusicPackBossConfig.Instance.SkeletronPrime;
+                return BossMusicOverride.overrideSkeletronPrimeMusic && LiliesMusicPackBossConfig.Instance.SkeletronPrime;
             }
         }
         #endregion
@@ -190,12 +179,11 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/VD");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)10;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)14;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool PlanteraActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.Plantera, player, 8500f);
-                return PlanteraActive && LiliesMusicPackBossConfig.Instance.Plantera;
+                return BossMusicOverride.overridePlanteraMusic && LiliesMusicPackBossConfig.Instance.Plantera;
             }
         }
         #endregion
@@ -205,12 +193,11 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/TheSunIntro");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)11;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)14;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool GolemActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.Golem, player, 8500f);
-                return GolemActive && LiliesMusicPackBossConfig.Instance.Golem;
+                return BossMusicOverride.overrideGolemMusic && LiliesMusicPackBossConfig.Instance.Golem;
             }
         }
         #endregion
@@ -219,12 +206,11 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/Lilytree");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)11;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)14;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool EOLActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.HallowBoss, player, 8500f);
-                return EOLActive && LiliesMusicPackBossConfig.Instance.EOL;
+                return BossMusicOverride.overrideEOLMusic && LiliesMusicPackBossConfig.Instance.EOL;
             }
         }
         #endregion
@@ -233,12 +219,11 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/Shingari");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)11;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)14;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool DukeFishronActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.DukeFishron, player, 8500f);
-                return DukeFishronActive && LiliesMusicPackBossConfig.Instance.DukeFish;
+                return BossMusicOverride.overrideDukeFishronMusic && LiliesMusicPackBossConfig.Instance.DukeFish;
             }
         }
         #endregion
@@ -247,12 +232,11 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/Magnoliadenudata");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)12;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)15;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool LunaticCultistActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.CultistBoss, player, 8500f);
-                return LunaticCultistActive && LiliesMusicPackBossConfig.Instance.LunaticCultist;
+                return BossMusicOverride.overrideLunaticCultistMusic && LiliesMusicPackBossConfig.Instance.LunaticCultist;
             }
         }
         #endregion
@@ -261,14 +245,13 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         {
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/MotherIntro");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)13;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)15;
 
             public override bool IsSceneEffectActive(Player player)
             {
                 LiliesPlayerFlags liliesPlayer = player.LiliesPlayer();
 
-                bool MoonLordHandActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.MoonLordCore, player, 8500f);
-                return MoonLordHandActive && LiliesMusicPackBossConfig.Instance.MoonLordMother && liliesPlayer.hasEnterMoonLordP2 == false;
+                return BossMusicOverride.overrideMoonLordMusic && LiliesMusicPackBossConfig.Instance.MoonLordMother;
             }
         }
         public class MoonLordP2 : ModSceneEffect
@@ -276,18 +259,11 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
 
             public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Boss/MotherOutro");
 
-            public override SceneEffectPriority Priority => (SceneEffectPriority)14;
+            public override SceneEffectPriority Priority => (SceneEffectPriority)16;
 
             public override bool IsSceneEffectActive(Player player)
             {
-                LiliesPlayerFlags liliesPlayer = player.LiliesPlayer();
-
-                bool MoonLordP2Active = NPCUtils.IsThereNpcNearbyAndActiveCount(NPCID.MoonLordFreeEye, player, 8500f, 3);
-
-                if(MoonLordP2Active && !liliesPlayer.hasEnterMoonLordP2)
-                    liliesPlayer.hasEnterMoonLordP2 = true;
-
-                return liliesPlayer.hasEnterMoonLordP2 && LiliesMusicPackBossConfig.Instance.MoonLordMother;
+                return BossMusicOverride.overrideMoonLordP2Music && LiliesMusicPackBossConfig.Instance.MoonLordMother;
             }
         }
         #endregion

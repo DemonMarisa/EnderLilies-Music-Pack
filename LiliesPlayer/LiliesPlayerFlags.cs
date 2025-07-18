@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace EnderLiliesMusicPack.LiliesPlayer
 {
-    public class LiliesPlayerFlags : ModPlayer
+    public partial class LiliesPlayerFlags : ModPlayer
     {
         public static bool onSurface;
         public static bool inSpace;
@@ -32,6 +32,7 @@ namespace EnderLiliesMusicPack.LiliesPlayer
         public static bool ZoneAbyss;
         public static bool ZoneSunkenSea;
         // 与灾厄音乐事件的适配
+        // 他俩等于false的时候就是别的mod正在播放BGM
         public static bool CalamityMusicEventInactive = true;
         // 与VCMM音乐事件的适配
         public static bool VCalamityMusicEventInactive = true;
@@ -40,13 +41,10 @@ namespace EnderLiliesMusicPack.LiliesPlayer
 
         public static float MusicTileRange = 525f * 16f;
 
-        // 是否进入过月总p2阶段，用于判断是否播放月总p2专属曲目
-        public bool hasEnterMoonLordP2 = false;
         public override void PostUpdateMiscEffects()
         {
             bool MoonLordHandActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.MoonLordCore, Player, 8500f);
-            if (hasEnterMoonLordP2 && !MoonLordHandActive)
-                hasEnterMoonLordP2 = false;
+
         }
         public override void PreUpdate()
         {
@@ -98,7 +96,6 @@ namespace EnderLiliesMusicPack.LiliesPlayer
                 ZoneAstralInfection = (bool)calamity.Call("GetInZone", player, "astral");
                 ZoneAbyss = (bool)calamity.Call("GetInZone", player, "abyss");
                 ZoneSunkenSea = (bool)calamity.Call("GetInZone", player, "sunkensea");
-
             }
 
             if (infernumMod)

@@ -1,5 +1,5 @@
 ﻿displayName = Ender Liles Music Pack（终焉系列 音乐包）
 author = DemonMarisa
 sortBefore = UnCalamityModMusic
-version = 0.0.0.1
+version = 0.0.0.3
 weakReferences = UnCalamityModMusic, CalamityMod

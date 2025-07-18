@@ -8,11 +8,12 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
 using Microsoft.Xna.Framework;
-using EnderLiliesMusicPack.MusicSystem;
+using EnderLiliesMusicPack.Core.MusicSystem;
+using EnderLiliesMusicPack.LiliesPlayer;
 
 namespace EnderLiliesMusicPack.Content.Items
 {
-    public class DebugItem : ModItem
+    public class CheckModCompItem : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -40,19 +41,13 @@ namespace EnderLiliesMusicPack.Content.Items
         {
             if (player.altFunctionUse == 2)
             {
-                LiliesMusicEventSystem.PlayedEvents.Add("LiliesFirstEnterWorld");
-                LiliesMusicEventSystem.PlayedEvents.Add("LiliesHardmodeStarted");
-                LiliesMusicEventSystem.PlayedEvents.Add("LiliesDownedMoonLord");
-                LiliesMusicEventSystem.PlayedEvents.Add("LiliesDownedMoonLord2");
-                Main.NewText("添加所有音乐事件标记");
+                Main.NewText($"Main.musicBox2: {Main.musicBox2}");
+                Main.NewText($"CalamityMusicEventInactive: {LiliesPlayerFlags.CalamityMusicEventInactive}");
             }
             else
             {
-                LiliesMusicEventSystem.PlayedEvents.Remove("LiliesFirstEnterWorld");
-                LiliesMusicEventSystem.PlayedEvents.Remove("LiliesHardmodeStarted");
-                LiliesMusicEventSystem.PlayedEvents.Remove("LiliesDownedMoonLord");
-                LiliesMusicEventSystem.PlayedEvents.Remove("LiliesDownedMoonLord2");
-                Main.NewText("清除所有音乐事件标记");
+                Main.NewText($"Main.musicBox2: {Main.musicBox2}");
+                Main.NewText($"VCalamityMusicEventInactive: {LiliesPlayerFlags.VCalamityMusicEventInactive}");
             }
             return base.CanUseItem(player);
         }

@@ -13,6 +13,7 @@ namespace EnderLiliesMusicPack.Content.Rarity
     {
         // 莱拉克相关物品的稀有度
         // 淡蓝色
-        public override Color RarityColor => new(240, 248, 255);
+        public override Color RarityColor => new(0, 191, 255);
+        // public override Color RarityColor => new(240, 248, 255);
     }
 }

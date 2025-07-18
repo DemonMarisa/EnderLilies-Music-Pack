@@ -1,0 +1,12 @@
+DisplayName: Lilies Music Pack Event Config
+Headers.Music: Music Header
+
+LunarTowers: {
+	Label: Lunar Towers
+	Tooltip: ""
+}
+
+Rain: {
+	Label: Rain
+	Tooltip: ""
+}

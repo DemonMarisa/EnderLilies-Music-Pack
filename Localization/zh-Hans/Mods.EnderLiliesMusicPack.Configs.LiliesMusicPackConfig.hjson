@@ -1,0 +1,36 @@
+DisplayName: Lilies Music Pack Config
+
+Headers: {
+	Music: Music Header
+	MusicConditionChanges: Music Condition Changes Header
+}
+
+MainThemeLilies: {
+	Label: Main Theme Lilies
+	Tooltip: ""
+}
+
+MainthemeMagnolia: {
+	Label: Maintheme Magnolia
+	Tooltip: ""
+}
+
+ENDERLILIES: {
+	Label: E N D E R L I L I E S
+	Tooltip: ""
+}
+
+Bulbel: {
+	Label: Bulbel
+	Tooltip: ""
+}
+
+HeartsStayUnchanged: {
+	Label: Hearts Stay Unchanged
+	Tooltip: ""
+}
+
+CalInterlude2: {
+	Label: Cal Interlude2
+	Tooltip: ""
+}

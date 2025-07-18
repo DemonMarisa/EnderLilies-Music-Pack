@@ -7,10 +7,6 @@
 	<PropertyGroup>
 		
 	</PropertyGroup>
-	<ItemGroup>
-	  <Folder Include="Content\MusicBoxs\Lilies\" />
-	  <Folder Include="Content\Tiles\Lilies\" />
-	</ItemGroup>
 
 	<!-- References -->
 
