@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace EnderLiliesMusicPack.Content.MusicBoxs.MusicEvent
@@ -15,5 +16,15 @@ namespace EnderLiliesMusicPack.Content.MusicBoxs.MusicEvent
         public override string MusicName => MusicPathing.Bulbel;
         public override int MusicBoxTile => ModContent.TileType<BulbelMusicBoxTile>();
         public override int LiliesOrLilac => (int)LiliesRarityID.liliesID;
+
+        public override void AddRecipes()
+        {
+            CreateRecipe().
+                AddIngredient(ItemID.MusicBox).
+                AddIngredient(ItemID.StoneBlock, 5).
+                AddIngredient(ItemID.Wood, 5).
+                AddIngredient(ItemID.LunarOre, 5).
+                Register();
+        }
     }
 }

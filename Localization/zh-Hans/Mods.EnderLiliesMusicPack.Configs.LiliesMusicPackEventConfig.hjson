@@ -1,12 +1,12 @@
-DisplayName: Lilies Music Pack Event Config
-Headers.Music: Music Header
+﻿DisplayName: Lilies Music Pack 事件设置
+Headers.Music: 音乐
 
 LunarTowers: {
-	Label: Lunar Towers
-	Tooltip: ""
+	Label: 天界塔事件
+	Tooltip: 开关天界塔事件音乐
 }
 
 Rain: {
-	Label: Rain
-	Tooltip: ""
+	Label: 雨天
+	Tooltip: 开关雨天音乐
 }

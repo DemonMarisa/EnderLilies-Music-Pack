@@ -1,36 +1,41 @@
-DisplayName: Lilies Music Pack Config
+DisplayName: Lilies Music Pack 主要设置
 
 Headers: {
-	Music: Music Header
-	MusicConditionChanges: Music Condition Changes Header
+	Music: 音乐
+	MusicConditionChanges: 音乐事件切换
 }
 
 MainThemeLilies: {
-	Label: Main Theme Lilies
-	Tooltip: ""
+	Label: 开关 Main Theme Lilies
+	Tooltip: 关闭后不会在进入游戏时播放
 }
 
 MainthemeMagnolia: {
-	Label: Maintheme Magnolia
-	Tooltip: ""
+	Label: 开关 Main Theme Magnolia
+	Tooltip: 关闭后不会在进入游戏时播放
 }
 
 ENDERLILIES: {
-	Label: E N D E R L I L I E S
-	Tooltip: ""
+	Label: 开关 ENDERLILIES
+	Tooltip: 关闭后不会在进入困难模式时播放
 }
 
 Bulbel: {
-	Label: Bulbel
-	Tooltip: ""
+	Label: 开关 Bulbel
+	Tooltip: 关闭后不会在击败月球领主后
 }
 
 HeartsStayUnchanged: {
-	Label: Hearts Stay Unchanged
-	Tooltip: ""
+	Label: 开关 Hearts Stay Unchanged
+	Tooltip: 关闭后不会在击败月球领主后
 }
 
 CalInterlude2: {
-	Label: Cal Interlude2
-	Tooltip: ""
+	// Label: Cal Interlude2
+	// Tooltip: ""
+}
+
+ParticleLimit: {
+	// Label: Particle Limit
+	// Tooltip: ""
 }

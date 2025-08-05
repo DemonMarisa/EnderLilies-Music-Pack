@@ -34,3 +34,8 @@ CalInterlude2: {
 	Label: Cal Interlude2
 	Tooltip: ""
 }
+
+ParticleLimit: {
+	Label: Particle Limit
+	Tooltip: ""
+}

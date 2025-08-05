@@ -1,15 +1,16 @@
-﻿using System;
+﻿using EnderLiliesMusicPack.Content.Particle;
+using EnderLiliesMusicPack.Core.MusicSystem;
+using EnderLiliesMusicPack.LiliesPlayer;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using EnderLiliesMusicPack.Core.MusicSystem;
-using EnderLiliesMusicPack.LiliesPlayer;
 
 namespace EnderLiliesMusicPack.Content.Items
 {
@@ -39,16 +40,7 @@ namespace EnderLiliesMusicPack.Content.Items
         public override bool AltFunctionUse(Player player) => true;
         public override bool? UseItem(Player player)
         {
-            if (player.altFunctionUse == 2)
-            {
-                Main.NewText($"Main.musicBox2: {Main.musicBox2}");
-                Main.NewText($"CalamityMusicEventInactive: {LiliesPlayerFlags.CalamityMusicEventInactive}");
-            }
-            else
-            {
-                Main.NewText($"Main.musicBox2: {Main.musicBox2}");
-                Main.NewText($"VCalamityMusicEventInactive: {LiliesPlayerFlags.VCalamityMusicEventInactive}");
-            }
+            new Kirakira(Main.MouseWorld, -Vector2.UnitY, Color.White, 240, MathHelper.PiOver4).Spawn();
             return base.CanUseItem(player);
         }
     }

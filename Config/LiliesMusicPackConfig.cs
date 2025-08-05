@@ -37,9 +37,11 @@ namespace EnderLiliesMusicPack.Config
         [DefaultValue(true)]
         public bool HeartsStayUnchanged { get; set; }
 
-        [Header("MusicConditionChanges")]
-        [BackgroundColor(211, 211, 211, 192)]
-        [DefaultValue(false)]
-        public bool CalInterlude2 { get; set; }
+
+        [BackgroundColor(192, 54, 64, 192)]
+        [Range(500, 10000)]
+        [Increment(1)]
+        [DefaultValue(5000)]
+        public int ParticleLimit { get; set; }
     }
 }

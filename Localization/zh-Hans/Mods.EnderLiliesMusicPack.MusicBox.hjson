@@ -1,118 +1,118 @@
-﻿iles: {
-	$parentVal: Mods.EnderLiliesMusicPack.MusicBoxTiles
+iles: {
+	// $parentVal: Mods.EnderLiliesMusicPack.MusicBoxTiles
 }
 
 TheSunOutroMusicBox: {
 	DisplayName: 音乐盒(The Sun - Outro)
-	Tooltip: 
-	'''
-	播放 [c/FFFAFA:The Sun - Outro](2:40)
-	深渊守卫 - 海尼尔的匕首
-	'''
+	Tooltip:
+		'''
+		播放 [c/FFFAFA:The Sun - Outro](2:40)
+		深渊守卫 - 海尼尔的匕首
+		'''
 }
 
 BulbelMusicBox: {
 	DisplayName: 音乐盒(Bulbel)
-	Tooltip: 		
-	'''
-	播放 [c/FFFAFA:Bulbel](3:26)
-	本以为我会感到欣慰，看着在彼岸感到满足的你
-	但不知为何，我不切实际地幻想着：
-	我值得被爱
-	我有资格知道什么是爱
-	我们都应该浸润在爱当中
-	[c/FFFAFA:多么希望没有尽头，多么渴望没有落幕]
-	[c/FFFAFA:我们在一起的时光]
-	[c/FFFAFA:百合花们凋零了]
-	[c/FFFAFA:撒向我的灵柩]
-	[c/FFFAFA:再见，我的青春挥霍殆尽，再见，我的纯白无暇]
-	[c/FFFAFA:我该歇斯底里吗？我该欣然接受吗？我满足了吗？]
-	[c/FFFAFA:我该怎样做才能让我为自己感到自豪？]
-	[c/FFFAFA:即便实现目标，无视我的情感，一切如故]
-	[c/FFFAFA:我依然是那个贪得无厌的自己]
-	[c/FFFAFA:当个傻瓜不是更好吗？一直一无所知？]
-	比起认识到世上有与我无缘的自由
-	[c/FFFAFA:愿百合花为我盛开]
-	'''
+	Tooltip:
+		'''
+		播放 [c/FFFAFA:Bulbel](3:26)
+		本以为我会感到欣慰，看着在彼岸感到满足的你
+		但不知为何，我不切实际地幻想着：
+		我值得被爱
+		我有资格知道什么是爱
+		我们都应该浸润在爱当中
+		[c/FFFAFA:多么希望没有尽头，多么渴望没有落幕]
+		[c/FFFAFA:我们在一起的时光]
+		[c/FFFAFA:百合花们凋零了]
+		[c/FFFAFA:撒向我的灵柩]
+		[c/FFFAFA:再见，我的青春挥霍殆尽，再见，我的纯白无暇]
+		[c/FFFAFA:我该歇斯底里吗？我该欣然接受吗？我满足了吗？]
+		[c/FFFAFA:我该怎样做才能让我为自己感到自豪？]
+		[c/FFFAFA:即便实现目标，无视我的情感，一切如故]
+		[c/FFFAFA:我依然是那个贪得无厌的自己]
+		[c/FFFAFA:当个傻瓜不是更好吗？一直一无所知？]
+		比起认识到世上有与我无缘的自由
+		[c/FFFAFA:愿百合花为我盛开]
+		'''
 }
 
 ENDERLILIESMusicBox: {
 	DisplayName: 音乐盒(ENDERLILIES)
-	Tooltip: 	
-	'''
-	播放 [c/FFFAFA:ENDERLILIES](2:12)
-	我倾注了我的一切，不该换来一缕阳光吗？
-	但我的雨下不停，我的雨下不停
-	我所看见的地狱，所听见的悲鸣
-	所失去的憧憬，什么也改变不了
-	我仍是那个我无法忍受的自己
-	点燃青丝，给予你温暖
-	希望你知道，我希望你在我身边
-	[c/FFFAFA:愿百合花为我盛开]
-	'''
+	Tooltip:
+		'''
+		播放 [c/FFFAFA:ENDERLILIES](2:12)
+		我倾注了我的一切，不该换来一缕阳光吗？
+		但我的雨下不停，我的雨下不停
+		我所看见的地狱，所听见的悲鸣
+		所失去的憧憬，什么也改变不了
+		我仍是那个我无法忍受的自己
+		点燃青丝，给予你温暖
+		希望你知道，我希望你在我身边
+		[c/FFFAFA:愿百合花为我盛开]
+		'''
 }
 
 HeartsStayUnChangedMusicBox: {
 	DisplayName: 音乐盒(Hearts Stay UnChanged)
-	Tooltip: 
-	'''
-	播放 [c/00BFFF:Hearts Stay UnChanged](4:32)
-	彩虹
-	以为自己永远不会知晓
-	温暖
-	所有的痛苦都将消散
-	而圣徒们会回应
-	告诉我，他们去往了何方？
-	我们又该去向何方？
-	[c/00BFFF:当木偶找不到它的主人时，它说——]
-	[c/00BFFF:我依然存在，我依旧是那个我]
-	[c/00BFFF:尽管我的爱如今有了另一个名字]
-	[c/00BFFF:我的心依然如初]
-	我们无需祈求一个全新的世界
-	迷失的依然可以被救赎
-	这个世界本就美好，只是我们未曾用心发现
-	为何我们总是感到如此匆忙？
-	为何我们总是感到如此匆忙？
-	为何我们总是觉得自己不够？
-	我们已经满足
-	让我们为自己绽放
-	我依然存在
-	我依旧是那个我
-	尽管我的爱如今有了另一个名字
-	我的心依然如初
-	'''
+	Tooltip:
+		'''
+		播放 [c/00BFFF:Hearts Stay UnChanged](4:32)
+		彩虹
+		以为自己永远不会知晓
+		温暖
+		所有的痛苦都将消散
+		而圣徒们会回应
+		告诉我，他们去往了何方？
+		我们又该去向何方？
+		[c/00BFFF:当木偶找不到它的主人时，它说——]
+		[c/00BFFF:我依然存在，我依旧是那个我]
+		[c/00BFFF:尽管我的爱如今有了另一个名字]
+		[c/00BFFF:我的心依然如初]
+		我们无需祈求一个全新的世界
+		迷失的依然可以被救赎
+		这个世界本就美好，只是我们未曾用心发现
+		为何我们总是感到如此匆忙？
+		为何我们总是感到如此匆忙？
+		为何我们总是觉得自己不够？
+		我们已经满足
+		让我们为自己绽放
+		我依然存在
+		我依旧是那个我
+		尽管我的爱如今有了另一个名字
+		我的心依然如初
+		'''
 }
 
 MainThemeLiliesMusicBox: {
 	DisplayName: 音乐盒(Main Theme Lilies)
-	Tooltip: 
-	'''
-	播放 [c/FFFAFA:Main Theme Lilies](1:05)
-	迷失在你的世界
-	寻找着只属于我的使命
-	愿百合花为我绽放
-	你是否听见了百合花们的低语？
-	树叶亲吻着蜂
-	泥壤掩埋着所有的悲伤
-	我在花园播种的一切
-	终不属于我
-	[c/FFFAFA:你是否听见了百合花们的轻喃？]
-	'''
+	Tooltip:
+		'''
+		播放 [c/FFFAFA:Main Theme Lilies](1:05)
+		迷失在你的世界
+		寻找着只属于我的使命
+		愿百合花为我绽放
+		你是否听见了百合花们的低语？
+		树叶亲吻着蜂
+		泥壤掩埋着所有的悲伤
+		我在花园播种的一切
+		终不属于我
+		[c/FFFAFA:你是否听见了百合花们的轻喃？]
+		'''
 }
 
 MainThemeMagnoliaMusicBox: {
 	DisplayName: Main Theme Magnolia Music Box
-	Tooltip: 
-	'''
-	播放 [c/00BFFF:Main Theme Magnolia](2:23)
-	被忘却的玛格诺利亚，曾多么荣耀
-	-
-	失去记忆的玛格诺利亚，于雾中燃烧
-	-
-	人事已尽的莉莉娅，她的使命已完成
-	-
-	坚韧不拔的玛格诺利亚，已被忘却
-	-
-	[c/00BFFF:啊，无人喝彩的玛格诺利亚]
-	'''
+	Tooltip:
+		'''
+		播放 [c/00BFFF:Main Theme Magnolia](2:23)
+		被忘却的玛格诺利亚，曾多么荣耀
+		-
+		失去记忆的玛格诺利亚，于雾中燃烧
+		-
+		人事已尽的莉莉娅，她的使命已完成
+		-
+		坚韧不拔的玛格诺利亚，已被忘却
+		-
+		[c/00BFFF:啊，无人喝彩的玛格诺利亚]
+		'''
 }

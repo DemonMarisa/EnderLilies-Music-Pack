@@ -2,6 +2,7 @@
 using EnderLiliesMusicPack.Content.Rarity;
 using EnderLiliesMusicPack.Content.Tiles.MusicEvent;
 using EnderLiliesMusicPack.Common;
+using Terraria.ID;
 
 namespace EnderLiliesMusicPack.Content.MusicBoxs.MusicEvent
 {
@@ -10,5 +11,13 @@ namespace EnderLiliesMusicPack.Content.MusicBoxs.MusicEvent
         public override string MusicName => MusicPathing.MainThemeLilies;
         public override int MusicBoxTile => ModContent.TileType<MainThemeLiliesMusicBoxTile>();
         public override int LiliesOrLilac => (int)LiliesRarityID.liliesID;
+
+        public override void AddRecipes()
+        {
+            CreateRecipe().
+                AddIngredient(ItemID.MusicBox).
+                AddIngredient(ItemID.GemTreeDiamondSeed).
+                Register();
+        }
     }
 }

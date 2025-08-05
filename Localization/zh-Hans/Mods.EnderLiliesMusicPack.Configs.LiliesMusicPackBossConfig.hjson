@@ -1,96 +1,96 @@
-DisplayName: Lilies Music Pack Boss Config
+﻿DisplayName: Lilies Music Pack Boss 音乐设置
 
 Headers: {
-	Music: Music Header
-	PreHardMode: Pre Hard Mode Header
+	Music: 音乐
+	PreHardMode: 肉前Boss
 }
 
 MoonLordMother: {
-	Label: Moon Lord Mother
-	Tooltip: ""
+	Label: 月球领主
+	Tooltip: 开关月球领主音乐
 }
 
 LunaticCultist: {
-	Label: Lunatic Cultist
-	Tooltip: ""
+	Label: 邪教徒
+	Tooltip: 开关邪教徒音乐
 }
 
 DukeFish: {
-	Label: Duke Fish
-	Tooltip: ""
+	Label: 猪龙鱼公爵
+	Tooltip: 开关猪龙鱼公爵音乐
 }
 
 EOL: {
-	Label: E O L
-	Tooltip: ""
+	Label: 光之女皇
+	Tooltip: 开关光之女皇音乐
 }
 
 Golem: {
-	Label: Golem
-	Tooltip: ""
+	Label: 石巨人
+	Tooltip: 开关石巨人音乐
 }
 
 Plantera: {
-	Label: Plantera
-	Tooltip: ""
+	Label: 世纪之花
+	Tooltip: 开关世纪之花音乐
 }
 
 SkeletronPrime: {
-	Label: Skeletron Prime
-	Tooltip: ""
+	Label: 机械骷髅王
+	Tooltip: 开关机械骷髅王音乐
 }
 
 Skeletron: {
-	Label: Skeletron
-	Tooltip: ""
+	Label: 骷髅王
+	Tooltip: 开关骷髅王音乐
 }
 
 TheDestroyer: {
-	Label: The Destroyer
-	Tooltip: ""
+	Label: 毁灭者
+	Tooltip: 开关骷髅王音乐
 }
 
 TheTwins: {
-	Label: The Twins
-	Tooltip: ""
+	Label: 双子魔眼
+	Tooltip: 开关双子魔眼音乐
 }
 
 QueenSlimeBoss: {
-	Label: Queen Slime Boss
-	Tooltip: ""
+	Label: 史莱姆女皇
+	Tooltip: 开关史莱姆女皇音乐
 }
 
 WOF: {
-	Label: W O F
-	Tooltip: ""
+	Label: 血肉墙
+	Tooltip: 开关血肉墙音乐
 }
 
 Deerclops: {
-	Label: Deerclops
-	Tooltip: ""
+	Label: 巨鹿
+	Tooltip: 开关巨鹿音乐
 }
 
 QueenBee: {
-	Label: Queen Bee
-	Tooltip: ""
+	Label: 蜂王
+	Tooltip: 开关蜂王音乐
 }
 
 BOC: {
-	Label: B O C
-	Tooltip: ""
+	Label: 克苏鲁之脑
+	Tooltip: 开关克苏鲁之脑音乐
 }
 
 EOC: {
-	Label: E O C
-	Tooltip: ""
+	Label: 世界吞噬者
+	Tooltip: 开关世界吞噬者音乐
 }
 
 EyeOC: {
-	Label: Eye O C
-	Tooltip: ""
+	Label: 克苏鲁之眼
+	Tooltip: 开关克苏鲁之眼音乐
 }
 
 KingSlime: {
-	Label: King Slime
-	Tooltip: ""
+	Label: 史莱姆王
+	Tooltip: 开关史莱姆王音乐
 }

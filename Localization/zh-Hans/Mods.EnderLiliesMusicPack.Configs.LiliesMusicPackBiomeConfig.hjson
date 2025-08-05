@@ -1,72 +1,72 @@
-DisplayName: Lilies Music Pack Biome Config
-Headers.Music: Music Header
+﻿DisplayName: Lilies Music Pack 环境设置
+Headers.Music: 音乐
 
 Forest: {
-	Label: Forest
-	Tooltip: ""
+	Label: 森林
+	Tooltip: 开关森林音乐
 }
 
 Town: {
-	Label: Town
-	Tooltip: ""
+	Label: 城镇
+	Tooltip: 开关城镇音乐
 }
 
 UnderGround: {
-	Label: Under Ground
-	Tooltip: ""
+	Label: 地下
+	Tooltip: 开关地下音乐
 }
 
 UnderWorld: {
-	Label: Under World
-	Tooltip: ""
+	Label: 地狱
+	Tooltip: 开关地狱音乐
 }
 
 Space: {
-	Label: Space
-	Tooltip: ""
+	Label: 太空
+	Tooltip: 开关太空音乐
 }
 
 Snow: {
-	Label: Snow
-	Tooltip: ""
+	Label: 雪地
+	Tooltip: 开关雪地音乐
 }
 
 Desert: {
-	Label: Desert
-	Tooltip: ""
+	Label: 沙漠
+	Tooltip: 开关沙漠音乐
 }
 
 Jungle: {
-	Label: Jungle
-	Tooltip: ""
+	Label: 丛林
+	Tooltip: 开关丛林音乐
 }
 
 Ocean: {
-	Label: Ocean
-	Tooltip: ""
+	Label: 海洋
+	Tooltip: 开关海洋音乐
 }
 
 MushroomFields: {
-	Label: Mushroom Fields
-	Tooltip: ""
+	Label: 蘑菇地
+	Tooltip: 开关蘑菇地音乐
 }
 
 EvilBiome: {
-	Label: Evil Biome
-	Tooltip: ""
+	Label: 邪恶环境
+	Tooltip: 开关邪恶环境音乐
 }
 
 Hallow: {
-	Label: Hallow
-	Tooltip: ""
+	Label: 神圣
+	Tooltip: 开关神圣地音乐
 }
 
 Dungeon: {
-	Label: Dungeon
-	Tooltip: ""
+	Label: 地牢
+	Tooltip: 开关地牢音乐
 }
 
 Aether: {
-	Label: Aether
-	Tooltip: ""
+	Label: 以太
+	Tooltip: 开关以太音乐
 }
