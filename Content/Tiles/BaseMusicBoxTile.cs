@@ -109,19 +109,14 @@ namespace EnderLiliesMusicPack.Content.Tiles
             {
                 new LilyLight(position, Vector2.Zero, new(0, 191, 255), 360, 0, 0).Spawn();
                 AniCD = 0;
-            }
+            }       
+        
             if (Main.rand.NextBool(3))
             {
                 // Main.NewText("Spawn");
                 new DustGlow(position + new Vector2(Main.rand.Next(-16, 16), 0), -Vector2.UnitY * Main.rand.NextFloat(0.3f, 1.1f), Color.SkyBlue, Main.rand.Next(45, 70), MathHelper.PiOver4).Spawn();
             }
         }
-        public override void EmitParticles(int i, int j, Tile tile, short tileFrameX, short tileFrameY, Color tileLight, bool visible)
-        {
-            if (!visible)
-                return;
-        }
-
         public static bool MusicBoxOFF(Tile tile)
         {
             return !TileDrawing.IsVisible(tile) || tile.TileFrameX != 36 || tile.TileFrameY % 36 != 0;

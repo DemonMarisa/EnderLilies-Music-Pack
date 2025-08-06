@@ -1,7 +1,5 @@
 iles: {
-	$parentVal: {
-		$parentVal: Mods.EnderLiliesMusicPack.MusicBoxTiles
-	}
+	$parentVal: Mods.EnderLiliesMusicPack.MusicBoxTiles
 }
 
 TheSunOutroMusicBox: {
