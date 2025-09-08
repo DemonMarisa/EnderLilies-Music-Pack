@@ -15,7 +15,6 @@ namespace EnderLiliesMusicPack.Content.MusicBoxs.MusicEvent
         public override void AddRecipes()
         {
             CreateRecipe().
-                AddIngredient(ItemID.MusicBox).
                 AddIngredient(ItemID.SkyBlueFlower).
                 Register();
         }

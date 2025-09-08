@@ -15,8 +15,12 @@ namespace EnderLiliesMusicPack.Content.MusicBoxs.MusicEvent
         public override void AddRecipes()
         {
             CreateRecipe().
-                AddIngredient(ItemID.MusicBox).
-                AddIngredient(ItemID.GemTreeDiamondSeed).
+                AddIngredient(ItemID.DaybloomSeeds).
+                AddIngredient(ItemID.MoonglowSeeds).
+                AddIngredient(ItemID.BlinkrootSeeds).
+                AddIngredient(ItemID.DeathweedSeeds).
+                AddIngredient(ItemID.WaterleafSeeds).
+                AddIngredient(ItemID.FireblossomSeeds).
                 Register();
         }
     }

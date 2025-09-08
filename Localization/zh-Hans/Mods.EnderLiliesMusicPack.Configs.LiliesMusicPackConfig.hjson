@@ -39,3 +39,13 @@ ParticleLimit: {
 	Label: 粒子上限
 	Tooltip: ""
 }
+
+CursorChange: {
+	Label: 改变光标材质
+	Tooltip:
+		'''
+		0为原版光标
+		1为终焉的莉莉光标
+		2为终焉的马格诺利亚光标
+		'''
+}

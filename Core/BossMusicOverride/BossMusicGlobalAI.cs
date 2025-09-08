@@ -15,6 +15,9 @@ namespace EnderLiliesMusicPack.Core.BossMusicOverride
     {
         public override void PostAI(NPC npc)
         {
+            if (LiliesPlayerFlags.BossRushActive)
+                return;
+
             #region 肉前
             // 史莱姆王
             if (npc.type == NPCID.KingSlime)

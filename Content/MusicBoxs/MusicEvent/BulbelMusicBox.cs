@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -20,10 +22,8 @@ namespace EnderLiliesMusicPack.Content.MusicBoxs.MusicEvent
         public override void AddRecipes()
         {
             CreateRecipe().
-                AddIngredient(ItemID.MusicBox).
                 AddIngredient(ItemID.StoneBlock, 5).
                 AddIngredient(ItemID.Wood, 5).
-                AddIngredient(ItemID.LunarOre, 5).
                 Register();
         }
     }

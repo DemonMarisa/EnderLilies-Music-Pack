@@ -21,10 +21,7 @@ namespace EnderLiliesMusicPack.Content.MusicBoxs.MusicEvent
         public override void AddRecipes()
         {
             CreateRecipe().
-                AddIngredient(ItemID.MusicBox).
-                AddIngredient(ItemID.Acorn).
                 AddIngredient(ItemID.BlueBerries).
-                AddIngredient(ItemID.LunarOre, 5).
                 Register();
         }
     }

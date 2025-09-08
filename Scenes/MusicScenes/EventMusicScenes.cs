@@ -97,10 +97,9 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool condition1 = !Main.remixWorld && LiliesPlayerFlags.ZoneSandstorm && !LiliesPlayerFlags.ugDesertOriginalHeight && !LiliesPlayerFlags.inSpace  && !(Main.bloodMoon || Main.eclipse);
-                bool condition2 = Main.remixWorld && LiliesPlayerFlags.ZoneSandstorm && !LiliesPlayerFlags.inSpace && !(Main.bloodMoon || Main.eclipse);
-
-                return condition1 || condition2;
+                bool condition2 = player.ZoneSandstorm && !LiliesPlayerFlags.inSpace && !(Main.bloodMoon || Main.eclipse);
+                bool condition = player.ZoneSnow && player.ZoneOverworldHeight && LiliesPlayerFlags.isRaining;
+                return condition || condition2;
             }
         }
         #endregion
@@ -125,7 +124,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
         #region 日蚀
         public class Eclipse : ModSceneEffect
         {
-            public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Event/AccoladeOutro");
+            public override int Music => MusicLoader.GetMusicSlot(Mod, "Music/Event/AccoladeIntro");
 
             public override SceneEffectPriority Priority => SceneEffectPriority.Event;
 

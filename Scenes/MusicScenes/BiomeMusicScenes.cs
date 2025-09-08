@@ -189,7 +189,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
 
             public override bool IsSceneEffectActive(Player player)
             {
-                return player.ZoneDesert && !LiliesPlayerFlags.ugDesertOriginalHeight && LiliesMusicPackBiomeConfig.Instance.Desert;
+                return player.ZoneDesert && !player.ZoneDirtLayerHeight && LiliesMusicPackBiomeConfig.Instance.Desert;
             }
         }
         public class DesertUnderground : ModSceneEffect
@@ -200,9 +200,7 @@ namespace EnderLiliesMusicPack.Scenes.MusicScenes
 
             public override bool IsSceneEffectActive(Player player)
             {
-                bool ugDesertHeight = player.position.Y >= Main.worldSurface * 14 + (double)Main.screenHeight / 2;
-
-                return player.ZoneUndergroundDesert && ugDesertHeight && !player.ZoneBeach && LiliesMusicPackBiomeConfig.Instance.Desert;
+                return player.ZoneUndergroundDesert && player.ZoneDirtLayerHeight && !player.ZoneBeach && LiliesMusicPackBiomeConfig.Instance.Desert;
             }
         }
         #endregion

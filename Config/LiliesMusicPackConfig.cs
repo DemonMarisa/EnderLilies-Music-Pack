@@ -38,10 +38,17 @@ namespace EnderLiliesMusicPack.Config
         public bool HeartsStayUnchanged { get; set; }
 
 
-        [BackgroundColor(192, 54, 64, 192)]
+        [BackgroundColor(211, 211, 211, 192)]
         [Range(500, 10000)]
         [Increment(1)]
         [DefaultValue(5000)]
         public int ParticleLimit { get; set; }
+
+
+        [BackgroundColor(211, 211, 211, 192)]
+        [Range(0, 2)]
+        [Increment(1)]
+        [DefaultValue(1)]
+        public int CursorChange { get; set; }
     }
 }

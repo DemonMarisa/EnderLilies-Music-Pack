@@ -22,15 +22,13 @@ namespace EnderLiliesMusicPack.LiliesPlayer
         public static bool mediumWorld;
         public static bool smallWorld;
 
-        public static bool ugDesertOriginalHeight;
-        public static bool ZoneSandstorm;
-
         // mod适配
         public static bool infernumMode;
         public static bool ZoneBrimstoneCrags;
         public static bool ZoneAstralInfection;
         public static bool ZoneAbyss;
         public static bool ZoneSunkenSea;
+        public static bool BossRushActive;
         // 与灾厄音乐事件的适配
         // 他俩等于false的时候就是别的mod正在播放BGM
         public static bool CalamityMusicEventInactive = true;
@@ -41,11 +39,6 @@ namespace EnderLiliesMusicPack.LiliesPlayer
 
         public static float MusicTileRange = 525f * 16f;
 
-        public override void PostUpdateMiscEffects()
-        {
-            bool MoonLordHandActive = NPCUtils.IsThereNpcNearbyAndActive(NPCID.MoonLordCore, Player, 8500f);
-
-        }
         public override void PreUpdate()
         {
             var calamityMod = ModLoader.TryGetMod("CalamityMod", out Mod calamity);
@@ -66,8 +59,6 @@ namespace EnderLiliesMusicPack.LiliesPlayer
             largeWorld = Main.maxTilesY == 2400;
             mediumWorld = Main.maxTilesY == 1800;
             smallWorld = Main.maxTilesY == 1200;
-
-            ugDesertOriginalHeight = (double)player.position.Y >= Main.worldSurface * 16.0 + (double)(Main.screenHeight / 2);
 
             if (noTownMusic)
             {
@@ -96,6 +87,7 @@ namespace EnderLiliesMusicPack.LiliesPlayer
                 ZoneAstralInfection = (bool)calamity.Call("GetInZone", player, "astral");
                 ZoneAbyss = (bool)calamity.Call("GetInZone", player, "abyss");
                 ZoneSunkenSea = (bool)calamity.Call("GetInZone", player, "sunkensea");
+                BossRushActive = (bool)calamity.Call("GetDifficultyActive", "bossrushactive");
             }
 
             if (infernumMod)

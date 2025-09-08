@@ -39,3 +39,8 @@ ParticleLimit: {
 	Label: Particle Limit
 	Tooltip: ""
 }
+
+CursorChange: {
+	Label: Cursor Change
+	Tooltip: ""
+}
